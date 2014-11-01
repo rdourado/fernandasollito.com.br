@@ -19,7 +19,7 @@ Template name: Blog
 								<a href="<?php my_pin_url() ?>" target="_blank"><img alt="Pinterest" class="social-icon" height="35" src="<?php bloginfo('template_url') ?>/img/social-pin.png" width="36"></a>&nbsp;
 								<a href="<?php my_fb_url() ?>" target="_blank"><img alt="Facebook" class="social-icon" height="35" src="<?php bloginfo('template_url') ?>/img/social-fb.png" width="36"></a>&nbsp;
 								<a href="<?php comments_link() ?>"><img alt="Comments" class="social-icon" height="35" src="<?php bloginfo('template_url') ?>/img/social-comm.png" width="36"></a>&nbsp;
-								<a href=""><img alt="Love" class="social-icon" height="35" src="<?php bloginfo('template_url') ?>/img/social-love.png" width="36"></a>
+								<!-- <a href=""><img alt="Love" class="social-icon" height="35" src="<?php bloginfo('template_url') ?>/img/social-love.png" width="36"></a> -->
 							</p>
 						</div>
 					</article>

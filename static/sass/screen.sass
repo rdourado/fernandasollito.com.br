@@ -1,0 +1,978 @@
+$pink: #ffc9c8
+$pink-light: #ffe9e9
+$gray-light: #f9f9f9
+$gray: #939598
+$gray-dark: #6f6f6f
+$page-width: 820px
+$speed: .25s
+
+$display: "Playfair Display", serif
+$cursive: "Allura", cursive
+$cursive2: "Cedarville Cursive", cursive
+$serif: "Old Standard TT", serif
+
+@import "compass"
+@import "compass/layout"
+@import url("http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Allura|Cedarville+Cursive|Old+Standard+TT:400,400italic,700")
+
+// Tags
+
++global-reset
+
+*
+	+box-sizing(border-box)
+body
+	border-top: 10px solid #000
+a, ins
+	text-decoration: none
+legend
+	display: none
+
+// Grid / Common classes
+
+.wrap, .menu,
+.social-wrap, .foot-wrap,
+#container
+	margin: 0 auto
+	max-width: $page-width
+	+pie-clearfix
+
+.wide-img
+	display: block
+	height: auto
+	width: 100%
+.responsive-img
+	display: block
+	height: auto
+	max-width: 100%
+
+.clear
+	clear: both
+	margin-top: 20px
+.two-cols
+	float: left
+	margin-left: 11%
+	width: 44.5%
+	&:first-child
+		margin-left: 0
+.three-cols
+	float: left
+	margin-left: 11%
+	width: 26%
+	&:first-child
+		margin-left: 0
+
+.rounded
+	+border-radius(10px)
+
+// Header
+
+.logo
+	padding: 58px 0
+	text-align: center
+.logo-img
+	display: block
+	margin: 0 auto
+
+.nav
+	background: #000 generated-image-url("glitter.jpg") center bottom
+	margin-bottom: 40px
+	+pie-clearfix
+	.menu-item
+		float: left
+		margin-left: 12%
+		&:first-child
+			margin-left: 0
+		a
+			color: #fff
+			display: block
+			font: italic 20px/30px $serif
+			padding: 18px 0
+			text-transform: lowercase
+			&:hover, &:focus, &:active
+				color: $pink
+// .current-menu-item,
+// .current_page_parent
+// 	a
+// 		color: $pink
+.wpmenucartli a
+	text-transform: none
+	&:after
+		$img: "bag.png"
+		background: generated-image-url($img)
+		content: ""
+		display: inline-block
+		height: image-height($img)
+		margin-left: 10px
+		position: relative
+		top: 1px
+		width: image-width($img)
+	.amount
+		font-size: 17px
+		// font-style: normal
+		margin-left: 8px
+		opacity: .9
+		&:before
+			display: none
+
+// Footer
+
+.social
+	background: #fff
+	clear: both
+	color: #000
+	padding: 80px 0
+	.widget-title
+		border: 0 none
+		font: 40px/1 $cursive
+		text-transform: none
+.social-wrap
+	margin: 0 auto
+#sbi_load
+	display: none !important
+
+.foot
+	background: #e4e5e6
+	clear: both
+	color: #000
+	padding: 80px 0
+	input
+		font: italic 14px/1.5 $serif
+		padding: 0 5px
+		+appearance(none)
+		+border-radius(0)
+	a
+		color: #000
+		&:hover, &:focus, &:active
+			text-decoration: underline
+.foot-title
+	font: 14px/1.5 $serif
+	margin-bottom: 1em
+	text-transform: uppercase
+.foot-wrap
+	display: table
+	font: 14px/1.5 $serif
+	padding: 0
+	big, strong
+		font-size: 1.25em
+		font-style: normal
+		font-weight: bold
+.foot-contact
+	display: table-cell
+	padding-right: 3%
+	width: 50%
+	p
+		margin-top: .9em
+		&:first-child
+			margin-top: 0
+	input
+		background: #fff
+		border: 0 none
+		display: block
+		font: italic 14px/1.5 $serif
+		height: 30px
+		margin: 0
+		padding: 0 5px
+		width: 100%
+		+appearance(none)
+		+border-radius(0)
+.foot-links
+	border-left: 1px solid #6d6e71
+	border-right: 1px solid #6d6e71
+	display: table-cell
+	padding: 0 3%
+	width: 25%
+	p
+		margin-top: 1.2em
+		&:first-child
+			margin-top: 0
+.foot-payment
+	display: table-cell
+	padding-left: 3%
+	width: 25%
+	p
+		margin-top: 1.2em
+		&:first-child
+			margin-top: 0
+
+// Home
+
+.home-slider
+	margin: -40px auto 40px
+	max-width: 1020px
+	position: relative
+	img
+		display: block
+		margin-bottom: 20px
+.slick-slider
+	-webkit-tap-highlight-color: transparent
+	-webkit-touch-callout: none
+	-ms-touch-action: pan-y
+	touch-action: pan-y
+	+user-select(none)
+.slick-list
+	overflow: hidden
+	position: relative
+	&:focus
+		outline: none
+	&.dragging
+		cursor: pointer
+		cursor: hand
+	.slick-loading &
+		background: #fff generated-image-url("ajax-loader.gif") center center no-repeat
+.slick-track,
+.slick-slide,
+.slick-slide img,
+.slick-slider .slick-list
+	+translate3d(0, 0, 0)
+.slick-track
+	left: 0
+	position: relative
+	top: 0
+	zoom: 1
+	+pie-clearfix
+	.slick-loading &
+		visibility: hidden
+.slick-slide
+	float: left
+	height: 100%
+	min-height: 1px
+	img
+		display: block
+	&.slick-loading img
+		display: none
+	display: none
+	&.dragging img
+		pointer-events: none
+	.slick-initialized &
+		display: block
+	.slick-loading &
+		visibility: hidden
+	.slick-vertical &
+		border: 1px solid transparent
+		display: block
+		height: auto
+.slick-prev,
+.slick-next
+	background: rgba(#000,.4)
+	border: 0 none
+	color: #fff
+	display: block
+	cursor: pointer
+	height: 0
+	margin-top: -20px
+	outline: none
+	overflow: hidden
+	padding: 40px 0 0
+	position: absolute
+	text-align: center
+	top: 50%
+	width: 35px
+	&:before, &:after
+		font-size: 16px
+		line-height: 40px
+		+stretch
+	&:hover, &:focus
+		background: rgba(#000,1)
+	&.slick-disabled
+		background: transparent
+		color: transparent
+.slick-prev
+	left: 20px
+	&:before
+		content: "\276E"
+.slick-next
+	right: 20px
+	&:before
+		content: "\276F"
+.slick-dots
+	display: none
+
+.heading
+	border-bottom: 2px solid $pink
+	color: $pink
+	font: 60px/1.1 $cursive
+	margin: 0 auto 40px
+	max-width: $page-width
+	text-align: center
+
+// Home Blog
+
+.home-blog
+	background: #000 generated-image-url("glitter.jpg") repeat-x center top
+	padding: 40px 0
+.blog-item
+	float: left
+	margin-left: 3.8%
+	width: 22.15%
+	&:first-child
+		margin-left: 0
+	a
+		background: #fff
+		display: block
+		min-height: 208px
+		padding-bottom: 5px
+		+border-radius(8px)
+.blog-image
+	background-position: center center
+	height: 116px
+	+background-size(cover)
+	+border-radius(8px 8px 0 0)
+.blog-title
+	color: #000
+	font: 25px/1 $cursive2
+	padding: 10px 10px 5px
+.blog-date
+	color: $gray-dark
+	font: 12px/1 $display
+	padding: 0 10px 10px
+	&:before
+		$img: "watch.png"
+		background: generated-image-url($img)
+		content: ""
+		display: inline-block
+		height: image-height($img)
+		margin-right: 5px
+		position: relative
+		top: -1px
+		vertical-align: bottom
+		width: image-width($img)
+
+// Home Widgets
+
+.home-widgets
+	background: $pink-light
+	font: italic 16px/1.2 $serif
+	padding: 40px 0
+	h3
+		font: 30px/1 $cursive
+	hr
+		background: $pink
+		border: 0 none
+		border-top: 2px solid $pink
+		height: 2px
+.widget
+	margin-bottom: 40px
+	&:last-child
+		margin-bottom: 0
+.widget-title
+	border-bottom: 2px solid $pink
+	font: italic 26px/1.2 $serif
+	margin-bottom: 10px
+	text-transform: lowercase
+
+#searchsubmit,
+.widget_search label
+	display: none
+#s
+	background: #fff
+	border: 0 none
+	display: block
+	font: 16px $serif
+	height: 35px
+	margin: 0
+	padding: 0 10px
+	width: 100%
+	+border-radius(12px)
+
+// Home Contact
+
+.home-contact,
+.comments
+	padding: 40px 0
+	h3, legend
+		display: block
+		font: 30px/1 $cursive
+		margin-bottom: .25em
+.contact-form
+	label
+		font: 11px $display
+		text-transform: lowercase
+	.text
+		float: left
+		margin-bottom: 20px
+		width: 48%
+	.text-last
+		float: right
+	.area
+		clear: both
+		margin-bottom: 20px
+.wpcf7-text,
+.wpcf7-textarea,
+#author,
+#email,
+#url,
+#comment
+	background: #fff
+	border: 0 none
+	font: 16px $serif
+	height: 35px
+	margin: 3px 0 0
+	padding: 0 10px
+	width: 100%
+	+border-radius(6px)
+	+box-shadow(5px 5px 1px 0 rgba(#b5b4b4,.14))
+.wpcf7-textarea,
+#comment
+	height: 180px
+	padding: 6px 10px
+.wpcf7-submit,
+#submit,
+.comment-reply-link
+	background: $pink
+	border: 0 none
+	color: #000 !important
+	cursor: pointer
+	display: inline-block
+	font: 11px/27px $display
+	margin: 0
+	padding: 0 25px
+	text-transform: lowercase
+	+border-radius(6px)
+.wpcf7-not-valid
+	border: 2px solid $pink
+span.wpcf7-not-valid-tip
+	display: none
+div.wpcf7-response-output
+	border: 0 none
+	border-top: 2px solid $pink
+	font: italic 16px/1.2 $serif
+	margin: 1.2em 0 0
+	padding: .6em 0 0
+.contact-info
+	p
+		font: italic 17px/1.3 $serif
+		margin-bottom: 1em
+
+// Blog
+
+.content,
+#respond,
+.commentlist
+	width: 69%
+.content
+	float: left
+	padding-bottom: 40px
+.widgets
+	float: right
+	padding: 40px 0
+	width: 20%
+
+.entry
+	padding-top: 40px
+.entry-head
+	margin-bottom: 20px
+.entry-title,
+.entry-body h1
+	border-bottom: 2px solid $pink
+	color: $pink
+	font: 60px/1 $cursive
+	a
+		color: $pink
+.entry-date
+	color: $gray
+	display: block
+	font: 14px/1.1 $display
+	padding: 5px 0 0
+.entry-body
+	h1
+		margin-bottom: 20px
+	h2
+		color: $gray
+		font: 45px/1 $cursive
+		margin-bottom: 20px
+	h3, h4, h5, h6
+		color: $gray
+		font: 30px/1 $cursive
+	h3
+		margin-bottom: 20px
+	p, ul, ol
+		font: 14px/1.7 $display
+		margin-bottom: 20px
+	li
+		margin-left: 40px
+	ul li
+		list-style: disc
+	ol li
+		list-style: decimal
+	img
+		height: auto
+		max-width: 100%
+	a
+		color: $pink
+	.entry-share
+		clear: both
+		font-size: 0
+		margin-bottom: 0
+		img
+			margin-right: 10px
+	.alignleft
+		float: left
+		margin: 0 20px 20px 0
+	.alignright
+		float: right
+		margin: 0 0 20px 20px
+	.aligncenter
+		clear: both
+		display: block
+		margin: 0 auto 20px
+
+.watch-action
+	position: absolute
+	img
+		display: none
+	a
+		background: generated-image-url("social-love.png") no-repeat center center
+		display: block
+		font: 13px/35px $serif
+		height: 35px
+		left: (46px * 3)
+		position: absolute
+		text-align: center
+		top: 0
+		width: 36px
+		.lc
+			color: $pink
+			display: inline
+			float: none
+			font: inherit
+			line-height: inherit
+			padding: 0
+	.status
+		left: 173px
+		position: absolute
+		top: 9px
+	.loading-img
+		display: none !important
+
+.pagination
+	clear: both
+	font: 40px/1.2 $cursive
+	margin: 40px 0
+	position: relative
+	+clearfix
+	&:before
+		border-top: 2px solid $pink
+		content: ""
+		display: block
+		left: 20px
+		margin-top: -1px
+		position: absolute
+		right: 20px
+		top: 50%
+		z-index: 1
+	a
+		background: #fff
+		color: $pink
+		float: right
+		padding-left: 20px
+		position: relative
+		z-index: 3
+		&:first-child
+			float: left
+			padding-left: 0
+			padding-right: 20px
+
+.widgets
+	.widget
+		font: 14px/1.1 $display
+		p, li
+			margin-bottom: .5em
+		li a
+			color: #000
+			&:hover, &:focus, &:active
+				color: $pink
+.widget_recent_entries
+	.widget-title
+		border: 0 none
+		font: italic 26px/.9 $serif
+		margin: 0 20px .5em 0
+		text-transform: lowercase
+
+// Comments
+
+.comments
+	background: $gray-light
+	font: 11px $display
+	padding-bottom: 20px
+	a
+		color: $pink
+	p
+		margin-bottom: 20px
+#author,
+#email,
+#url
+	margin-right: 10px
+	width: 50%
+	+box-shadow(none)
+#comment
+	+box-shadow(none)
+
+.commentlist
+	margin-bottom: 40px
+	> li
+		border-top: 2px solid #fff
+		margin-bottom: 20px
+		padding-top: 20px
+		&:first-child
+			border-top: 0 none
+			padding-top: 0
+	.avatar
+		float: right
+	p
+		margin-bottom: 0
+.comment-author,
+.comment-meta
+	font-size: 13px
+.comment-meta
+	margin-bottom: 10px
+.reply
+	margin-top: 20px
+
+// Sobre
+
+.page-template-template-about-php
+
+	.entry
+		background: $pink-light
+		margin-top: -40px
+		padding: 40px 0
+		~ p
+			clear: both
+		big
+			font-size: 20px
+		p
+			font: italic 16px $serif
+			line-height: 20px
+	.entry-head
+		display: none
+	.box
+		border-bottom: 2px solid $pink
+		border-top: 2px solid $pink
+		clear: both
+		margin-bottom: 20px
+		overflow: hidden
+		padding: 20px 0 0
+
+// Informações Úteis
+
+.page-template-template-info-php
+
+	.page-nav
+		float: left
+		font: 15px/2 $serif
+		padding: 50px 2% 0 0
+		width: 25%
+		a
+			color: #000
+		.current-menu-item a,
+		a:hover, a:focus, a:active
+			color: $pink
+	.nav-title
+		font: 20px/1.25 $serif
+		margin-bottom: .5em
+		text-transform: uppercase
+	.entry
+		float: right
+		padding: 0 0 0 2%
+		width: 75%
+	.entry-title
+		font-size: 42px
+		line-height: 1.2em
+		a
+			color: #000
+			font-family: $cursive2
+	.entry-body
+		p, h2, h3, h4, h5, h6
+			color: #808080
+			font: italic 16px/1.375 $serif
+			margin-bottom: 1em
+		h2, h3, h4, h5, h6
+			margin-top: 2em
+
+// WooCommerce
+
+#container
+	padding: 40px 0
+
+.woocommerce,
+.woocommerce-page
+
+	div.product div.images img
+		+box-shadow(none)
+
+	button.button,
+	input.button,
+	input.button.alt
+		background: $gray
+		border: 0 none
+		color: #fff
+		font-family: $display
+		font-weight: normal
+		text-transform: lowercase
+		+box-shadow(none)
+		+text-shadow(none)
+		&:hover, &:focus, &:active
+			background: $gray
+			color: transparent
+			+box-shadow(inset 0 1px 0 0 rgba(#000,.1))
+			+text-shadow(0 1px 0 #fff)
+	input.button.alt
+		background: $pink
+		&:hover, &:focus, &:active
+			background: $pink
+
+	// Shop Table
+
+	table.shop_table
+		border: 0 none
+		.cart_item:nth-child(odd)
+			background: lighten($pink-light, 4%)
+		.quantity
+			margin-left: 0
+
+	// Collaterals
+
+	.cart-collaterals
+		.cart_totals
+			text-align: left
+
+	// Form
+
+	form .form-row
+		input.input-text,
+		textarea
+			border: 1px solid $gray
+			font-family: $display
+			font-size: 14px
+			padding: 3px 5px
+
+	// Checkout
+
+	#customer_details
+		margin-bottom: 40px
+
+	.checkout
+
+		#ship-to-different-address
+			font-family: $display
+			font-size: 16px
+			padding: 6px 0
+			input
+				float: left
+				margin-right: 4px
+
+	.order_details li
+		list-style: none
+	.customer_details,
+	.col-1, .col-2
+		margin-bottom: 40px
+
+	// Payment Methods
+
+	#payment
+		background: none
+		padding-bottom: 40px
+		ul.payment_methods li
+			list-style: none
+		div.payment_box
+			background: $gray-light
+			color: #000
+			+box-shadow(none)
+			&:after
+				border-bottom-color: $gray-light
+
+	// Pagination
+
+	nav.woocommerce-pagination
+		font: 16px/1.1 $serif
+		padding-bottom: 40px
+		ul
+			border: 0 none
+			li
+				border: 0 none
+				a, span
+					padding-left: .8em
+					padding-right: .8em
+					&.current
+						background: none
+				a
+					color: $pink
+					&:hover, &:focus, &:active
+						background: $pink
+						color: #fff
+				span
+					color: $gray
+
+.woocommerce
+
+	#sidebar,
+	.page-title,
+	.woocommerce-tabs,
+	.woocommerce-breadcrumb
+		display: none
+
+	.woocommerce-result-count
+		color: $gray
+		font: 14px/1.8 $display
+	.orderby
+		background: #fff
+		font: 14px/1.1 $display
+
+	span.onsale
+		background: #fff
+		color: $pink
+		font: italic 15px/2 $serif
+		margin: 5px 0 0 5px
+		padding: 0 20px
+		+border-radius(15px)
+		+box-shadow(none)
+		+text-shadow(none)
+
+	// Related
+
+	.related
+		clear: both
+		h2
+			font: 40px/1 $cursive
+			margin-bottom: 20px
+			padding-top: 40px
+
+	// Product
+
+	div.product
+		.product_title
+			border: 0 none
+			color: #000
+			font: 45px/1 $cursive
+			margin-bottom: 10px
+		p, .product_meta
+			color: #808285
+			font: 17px/1.3 $serif
+			margin-bottom: 20px
+		a
+			color: $pink
+		.price
+			ins, .amount
+				color: #000
+				font: bold 20px $display
+			del .amount
+				font: 14px $serif
+		// .variations
+		// 	select, option
+		// 		background: #fff
+		// 		font-family: $serif
+		// 		font-size: 14px
+		.button.button.alt
+			background: $pink
+			border: 0 none
+			color: #fff
+			font-family: $display
+			font-weight: normal
+			+box-shadow(none)
+			+text-shadow(none)
+
+	.woocommerce-message,
+	.woocommerce-info,
+	.woocommerce-error
+		background: none
+		border-color: $pink
+		font-family: $serif
+		+border-radius(0)
+		+box-shadow(none)
+		&:before
+			background-color: $pink
+			+box-shadow(none)
+		.button
+			background: $pink
+			border: 0 none
+			color: #fff
+			font-weight: normal
+			position: relative
+			top: -6px
+			+box-shadow(none)
+			+text-shadow(none)
+			&:hover, &:focus, &:active
+				background: $pink
+				top: -6px
+
+	// Produtcs
+
+	ul.products
+		margin-bottom: 20px
+		li.product
+			margin-bottom: 20px
+			position: relative
+			width: 30.75% !important
+			a
+				color: #000
+				img
+					+box-shadow(none)
+					+single-transition(none)
+				&:hover, &:focus
+					img
+						+box-shadow(none)
+			span.onsale
+				margin: 0
+				padding: 0
+				top: 5%
+				+border-radius(0)
+				+stretch-x(20%, 20%)
+			h3,
+			.price
+				display: block
+				font: italic 20px/1.2 $serif
+				padding: 0
+				visibility: hidden
+				text-align: center
+				top: 30%
+				+stretch-x
+			.price
+				color: #000
+				margin-top: 1.2em
+			.amount
+				color: #000
+			del
+				text-decoration: none
+				&:before
+					color: #000
+					content: "de "
+				&:after
+					color: #000
+					content: " por "
+			ins
+				display: block
+			.add_to_cart_button,
+			.add_to_cart_button:active
+				background: $pink
+				border: 0 none
+				bottom: 10%
+				color: #000
+				font: italic 15px/2 $serif
+				left: 20%
+				padding: 0
+				position: absolute
+				visibility: hidden
+				right: 20%
+				top: auto
+				text-align: center
+				+border-radius(0)
+				+box-shadow(none)
+				+text-shadow(none)
+			.added_to_cart
+				display: none
+
+			&:hover
+				img
+					opacity: .2
+				h3,
+				.price,
+				.add_to_cart_button
+					visibility: visible
+
+.woocommerce-cart,
+.woocommerce-page
+	.content
+		width: 100%
+	.widget
+		display: none
