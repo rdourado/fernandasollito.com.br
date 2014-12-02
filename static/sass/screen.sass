@@ -950,13 +950,17 @@ div.wpcf7-response-output
 			ins
 				display: block
 			.add_to_cart_button,
-			.add_to_cart_button:active
+			.add_to_cart_button:active,
+			.product_type_variable,
+			.product_type_variable:active
 				background: $pink
 				border: 0 none
 				bottom: 10%
 				color: #000
+				display: block
 				font: italic 15px/2 $display
 				left: 20%
+				overflow: hidden
 				padding: 0
 				position: absolute
 				visibility: hidden
@@ -974,8 +978,20 @@ div.wpcf7-response-output
 					opacity: .2
 				h3,
 				.price,
-				.add_to_cart_button
+				.add_to_cart_button,
+				.product_type_variable
 					visibility: visible
+		li.outofstock
+			.product_type_variable,
+			.product_type_variable:active
+				text-indent: -999px
+				&:before
+					content: "esgotada"
+					display: block
+					left: 0
+					position: absolute
+					right: 0
+					text-indent: 0
 
 .woocommerce-cart,
 .woocommerce-page
