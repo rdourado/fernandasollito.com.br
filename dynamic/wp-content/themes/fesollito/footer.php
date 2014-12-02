@@ -16,10 +16,10 @@
 			<div class="foot">
 				<div class="foot-wrap">
 					<div class="foot-contact">
-						<p>Dúvidas <b>11 3966-4704</b> | <a href="mailto:contato@fernandasollito.com.br">contato@fernandasollito.com.br</a><br>
-						Segunda à Sexta 10h às 18h | © 2014 Todos os direitos<br>
-						reservados Fernanda Sollito Sandra Sollito indústria<br>
-						e comércio de confecções LTDA ME.</p>
+						<p><b>Dúvidas 11 3966-4704</b> | <a href="mailto:contato@fernandasollito.com.br">contato@fernandasollito.com.br</a><br>
+						Segunda à Sexta 10h às 18h | Sábado 11h às 16h<br>
+						@ 2014 Todos os direitos reservados Fernanda Sollito<br>
+						Sandra Sollito indústria e comércio de confecções LTDA ME.</p>
 						<form action="<?php my_home_url() ?>" method="get" class="searchform">
 							<fieldset>
 								<legend>Busca</legend>
