@@ -109,6 +109,7 @@ function my_setup()
 		'secondary' => 'Informações Úteis'
 	) );
 	add_image_size( 'slide', 1020, 472, true );
+	add_image_size( 'my-thumb', 68, 46, true );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'post-thumbnails' );
 }
